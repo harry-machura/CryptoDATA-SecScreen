@@ -15,19 +15,8 @@ namespace CryptoDATA_SecScreen
         public Form2()
         {
             InitializeComponent();
-            this.BackColor = Color.Black;
-
-            // Beispiel-Inhalt: Ein Label
-           
-            if(Form1.tabControll1 != null)
-            // Hinweis zum Schließen des Fensters
-            WebBrowser browser = new WebBrowser();
-            browser.Dock = DockStyle.Fill;
-            browser.Url = new Uri( "https://google.de");
-            this.Controls.Add(browser);
-
-            // Event-Handler für Tastendrücke, um das Fenster zu schließen
-            this.KeyDown += Form2_KeyDown;
+            this.BackColor = Color.Black; // Standardhintergrund
+            this.KeyDown += Form2_KeyDown; // Event-Handler zum Schließen bei ESC
         }
 
         // Event-Handler zum Schließen des Fensters bei ESC-Taste
@@ -39,25 +28,50 @@ namespace CryptoDATA_SecScreen
             }
         }
 
-        // Passt die Position des Labels an, wenn die Formgröße geändert wird
-        protected override void OnResize(EventArgs e)
+        public void LoadWebBrowser(string url)
         {
-            base.OnResize(e);
-            if (this.Controls.Count > 0 && this.Controls[0] is Label contentLabel)
-            {
-                contentLabel.Location = new Point(
-                    (this.ClientSize.Width - contentLabel.Width) / 2,
-                    (this.ClientSize.Height - contentLabel.Height) / 2
-                );
-            }
-            if (this.Controls.Count > 1 && this.Controls[1] is Label closeHintLabel)
-            {
-                closeHintLabel.Location = new Point(
-                    (this.ClientSize.Width - closeHintLabel.Width) / 2,
-                    this.ClientSize.Height - closeHintLabel.Height - 50
-                );
-            }
+            // Vorhandene Steuerelemente entfernen, um Konflikte zu vermeiden
+            this.Controls.Clear();
 
+            WebBrowser webBrowser = new WebBrowser();
+            webBrowser.Dock = DockStyle.Fill; // Füllt die gesamte Form aus
+            webBrowser.ScriptErrorsSuppressed = true; // Unterdrückt Skriptfehler-Popups
+            this.Controls.Add(webBrowser);
+
+            try
+            {
+                webBrowser.Navigate(url);
+            }
+            catch (UriFormatException ex)
+            {
+                MessageBox.Show($"Ungültiges URL-Format: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Optional: Fenster schließen oder Fehlermeldung im Fenster anzeigen
+                this.Close();
+            }
+        }
+
+        // Methode zum Laden eines Bildes in einer PictureBox
+        public void LoadImage(string imagePath)
+        {
+            // Vorhandene Steuerelemente entfernen
+            this.Controls.Clear();
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Dock = DockStyle.Fill; // Füllt die gesamte Form aus
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Bild skalieren, um in die Box zu passen
+            this.Controls.Add(pictureBox);
+
+            try
+            {
+                // Bild laden
+                pictureBox.Image = Image.FromFile(imagePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Laden des Bildes: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Optional: Fenster schließen oder Fehlermeldung im Fenster anzeigen
+                this.Close();
+            }
         }
     }
 }
