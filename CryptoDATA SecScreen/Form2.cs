@@ -73,5 +73,28 @@ namespace CryptoDATA_SecScreen
                 this.Close();
             }
         }
+
+        public void LoadQrCode(Image qrCodeImage)
+        {
+            // Vorhandene Steuerelemente entfernen
+            this.Controls.Clear();
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Dock = DockStyle.Fill;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Zoom ist hier besser als Stretch, damit der QR-Code nicht verzerrt wird
+            pictureBox.BackColor = Color.White; // Wichtig für gute Lesbarkeit des QR-Codes
+            this.Controls.Add(pictureBox);
+
+            try
+            {
+                // Das übergebene Bitmap-Objekt als Bildquelle setzen
+                pictureBox.Image = qrCodeImage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Anzeigen des QR-Codes: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
     }
 }
