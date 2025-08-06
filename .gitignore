@@ -1,0 +1,30 @@
+# Visual Studio Solution- und Projektdateien
+*.sln
+*.suo
+*.user
+*.userprefs
+*.vs/
+**/bin/
+**/obj/
+
+# NuGet-Pakete
+packages/
+**/packages/
+*.nupkg
+
+# Resharper-Dateien
+*.ReSharper/
+*.resharper/
+_ReSharper.*/
+
+# Sonstige Dateien
+*.DS_Store
+Thumbs.db
+
+# Abhängigkeiten, die von der IDE generiert werden
+[Dd]ebug/
+[Rr]elease/
+
+# User Secrets-Dateien
+appsettings.json
+appsettings.*.json
