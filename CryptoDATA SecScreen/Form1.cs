@@ -34,9 +34,9 @@ namespace CryptoDATA_SecScreen
             secondForm.Size = secondScreen.WorkingArea.Size;
             secondForm.FormBorderStyle = FormBorderStyle.None;
             secondForm.WindowState = FormWindowState.Maximized;
-
+            secondForm.ShowInTaskbar = false;
             // Inhalt an Form2 übergeben, basierend auf der ausgewählten Registerkarte
-            if (tabControl1.TabIndex == 0)
+            if (tabControl1.SelectedIndex == 0)
             {
                 // Browser-Tab ist ausgewählt
                 string url = textBox1.Text;
@@ -50,7 +50,7 @@ namespace CryptoDATA_SecScreen
                     MessageBox.Show("Bitte geben Sie eine URL ein.");
                 }
             }
-            else if (tabControl1.TabIndex == 1)
+            else if (tabControl1.SelectedIndex == 1)
             {
                 // Bild-Tab ist ausgewählt
                 if (!string.IsNullOrWhiteSpace(openFileDialog1.FileName))
