@@ -1,0 +1,5 @@
+C:\Users\Harry\source\repos\CryptoDATA SecScreen\CryptoDATA SecScreen\obj\Debug\CryptoDATA SecScreen.csproj.AssemblyReference.cache
+C:\Users\Harry\source\repos\CryptoDATA SecScreen\CryptoDATA SecScreen\obj\Debug\CryptoDATA_SecScreen.Form1.resources
+C:\Users\Harry\source\repos\CryptoDATA SecScreen\CryptoDATA SecScreen\obj\Debug\CryptoDATA_SecScreen.Properties.Resources.resources
+C:\Users\Harry\source\repos\CryptoDATA SecScreen\CryptoDATA SecScreen\obj\Debug\CryptoDATA SecScreen.csproj.GenerateResource.cache
+C:\Users\Harry\source\repos\CryptoDATA SecScreen\CryptoDATA SecScreen\obj\Debug\CryptoDATA SecScreen.csproj.CoreCompileInputs.cache

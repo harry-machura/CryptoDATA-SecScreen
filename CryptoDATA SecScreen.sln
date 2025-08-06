@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoDATA SecScreen", "CryptoDATA SecScreen\CryptoDATA SecScreen.csproj", "{5EFEB5AC-D7FA-4FFD-818A-8E5499CB6B50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EFEB5AC-D7FA-4FFD-818A-8E5499CB6B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFEB5AC-D7FA-4FFD-818A-8E5499CB6B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFEB5AC-D7FA-4FFD-818A-8E5499CB6B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFEB5AC-D7FA-4FFD-818A-8E5499CB6B50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DCBA0F6-256A-4829-99D1-A2579AC939C1}
+	EndGlobalSection
+EndGlobal
